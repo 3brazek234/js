@@ -1,0 +1,1281 @@
+# JavaScript Array Methods - Complete Exercise Set
+
+## Junior Level Exercises
+
+### 1. Basic Array Operations
+```javascript
+const fruits = ['apple', 'banana', 'orange', 'grape'];
+```
+**Tasks:**
+- Add 'mango' to the end of the array
+- Add 'strawberry' to the beginning
+- Remove the last item
+- Remove the first item
+- Find the index of 'orange'
+
+### 2. Array Iteration - forEach
+```javascript
+const numbers = [1, 2, 3, 4, 5];
+```
+**Tasks:**
+- Print each number multiplied by 2
+- Print each number with its index
+- Calculate the sum of all numbers using forEach
+
+### 3. Array Transformation - map
+```javascript
+const prices = [10, 25, 30, 15];
+```
+**Tasks:**
+- Create a new array with all prices increased by 10%
+- Create an array of strings showing each price with currency: "$10"
+- Convert Celsius temperatures [0, 20, 30, 40] to Fahrenheit
+
+### 4. Array Filtering - filter
+```javascript
+const ages = [12, 18, 25, 16, 30, 14, 22];
+```
+**Tasks:**
+- Filter adults (age >= 18)
+- Filter teenagers (age 13-19)
+- Filter even ages only
+
+### 5. Array Searching - find & findIndex
+```javascript
+const students = [
+  {name: 'Ahmed', grade: 85},
+  {name: 'Sara', grade: 92},
+  {name: 'Omar', grade: 78}
+];
+```
+**Tasks:**
+- Find the student with grade > 90
+- Find the index of student named 'Omar'
+- Check if any student has grade < 80
+
+---
+
+## Mid Level Exercises
+
+### 6. Array Reduction - reduce
+```javascript
+const transactions = [100, -50, 200, -30, 150];
+const products = [
+  {name: 'laptop', price: 1000, quantity: 2},
+  {name: 'phone', price: 500, quantity: 3},
+  {name: 'tablet', price: 300, quantity: 1}
+];
+```
+**Tasks:**
+- Calculate the final balance from transactions
+- Calculate total value of all products (price × quantity)
+- Find the product with highest total value
+- Group products by price range: <500, 500-999, >=1000
+
+### 7. Complex Filtering and Mapping
+```javascript
+const employees = [
+  {name: 'Ali', department: 'IT', salary: 50000, experience: 3},
+  {name: 'Nour', department: 'HR', salary: 45000, experience: 5},
+  {name: 'Hassan', department: 'IT', salary: 60000, experience: 7},
+  {name: 'Layla', department: 'Finance', salary: 55000, experience: 4}
+];
+```
+**Tasks:**
+- Get names of IT employees with salary > 55000
+- Calculate average salary by department
+- Find employees eligible for promotion (experience >= 5)
+- Create salary report: {name, department, salaryGrade} where grade is 'Junior'(<50k), 'Mid'(50k-60k), 'Senior'(>60k)
+
+### 8. Array Flattening and Sorting
+```javascript
+const nestedData = [
+  [1, 2, 3],
+  [4, 5, 6],
+  [7, [8, 9], 10]
+];
+const mixedArray = [3, 1, 4, 1, 5, 9, 2, 6];
+```
+**Tasks:**
+- Flatten the nested array completely
+- Sort mixedArray in ascending order
+- Sort employees from exercise 7 by salary (descending)
+- Sort employees by department, then by experience
+
+### 9. Array Validation - every & some
+```javascript
+const scores = [85, 90, 78, 92, 88];
+const userInputs = ['', 'hello', 'world', ''];
+const products2 = [
+  {name: 'A', price: 100, inStock: true},
+  {name: 'B', price: 0, inStock: false},
+  {name: 'C', price: 50, inStock: true}
+];
+```
+**Tasks:**
+- Check if all scores are passing (>= 70)
+- Check if some inputs are empty
+- Validate if all products have valid prices (> 0) and are in stock
+- Check if any product needs restocking
+
+---
+
+## Senior Level Exercises
+
+### 10. Advanced Data Processing Pipeline
+```javascript
+const salesData = [
+  {id: 1, product: 'laptop', category: 'electronics', price: 1000, quantity: 2, date: '2024-01-15', region: 'North'},
+  {id: 2, product: 'shirt', category: 'clothing', price: 50, quantity: 5, date: '2024-01-16', region: 'South'},
+  {id: 3, product: 'phone', category: 'electronics', price: 800, quantity: 1, date: '2024-01-17', region: 'North'},
+  {id: 4, product: 'jeans', category: 'clothing', price: 80, quantity: 3, date: '2024-01-18', region: 'East'},
+  {id: 5, product: 'tablet', category: 'electronics', price: 400, quantity: 2, date: '2024-01-19', region: 'South'}
+];
+```
+**Tasks:**
+- Create a comprehensive sales report with:
+  - Total revenue by category
+  - Average order value by region
+  - Top selling product by quantity
+  - Revenue trend by date
+- Implement a flexible filtering system that can filter by multiple criteria
+- Create a data transformation pipeline that normalizes the data structure
+
+### 11. Performance Optimization Challenge
+```javascript
+const largeDataset = Array.from({length: 100000}, (_, i) => ({
+  id: i,
+  value: Math.random() * 1000,
+  category: ['A', 'B', 'C'][i % 3],
+  active: Math.random() > 0.3
+}));
+```
+**Tasks:**
+- Find the most efficient way to:
+  - Get top 10 highest values in category 'A'
+  - Calculate statistics (min, max, avg, std deviation) for active items
+  - Group items by category and calculate aggregates
+- Compare performance of different approaches (for loop vs array methods)
+
+### 12. Functional Programming Patterns
+```javascript
+const orders = [
+  {id: 1, customerId: 'C1', items: [{name: 'item1', price: 100, qty: 2}], status: 'pending'},
+  {id: 2, customerId: 'C2', items: [{name: 'item2', price: 50, qty: 1}, {name: 'item3', price: 75, qty: 2}], status: 'completed'},
+  {id: 3, customerId: 'C1', items: [{name: 'item1', price: 100, qty: 1}], status: 'cancelled'}
+];
+```
+**Tasks:**
+- Implement pure functions for:
+  - Order total calculation
+  - Customer lifetime value calculation
+  - Order status summary
+- Create a composable data processing pipeline
+- Implement memoization for expensive calculations
+
+### 13. Advanced Array Manipulation
+```javascript
+const matrix = [
+  [1, 2, 3],
+  [4, 5, 6],
+  [7, 8, 9]
+];
+const irregularArray = [1, [2, 3], [4, [5, 6]], 7, [8, [9, [10]]]];
+```
+**Tasks:**
+- Transpose the matrix
+- Implement deep flatten for irregular arrays
+- Create a function that rotates the matrix 90 degrees
+- Implement array chunking with custom chunk sizes
+
+### 14. Real-world Scenario: E-commerce Analytics
+```javascript
+const customerData = [
+  {
+    id: 'C1',
+    orders: [
+      {date: '2024-01-01', items: [{category: 'electronics', price: 1000}, {category: 'books', price: 20}]},
+      {date: '2024-02-01', items: [{category: 'electronics', price: 500}]}
+    ]
+  },
+  {
+    id: 'C2',
+    orders: [
+      {date: '2024-01-15', items: [{category: 'clothing', price: 80}, {category: 'books', price: 15}]},
+      {date: '2024-03-01', items: [{category: 'electronics', price: 200}]}
+    ]
+  }
+];
+```
+**Tasks:**
+- Customer segmentation based on spending patterns
+- Recommendation engine based on purchase history
+- Churn prediction based on order frequency
+- Revenue forecasting using historical data
+
+### 15. Algorithm Implementation with Arrays
+```javascript
+const unsortedArray = [64, 34, 25, 12, 22, 11, 90];
+const searchArray = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19];
+```
+**Tasks:**
+- Implement bubble sort using only array methods
+- Implement binary search using array methods
+- Find the longest increasing subsequence
+- Implement array-based LRU cache
+
+---
+
+# Solutions
+
+## Junior Level Solutions
+
+### 1. Basic Array Operations
+```javascript
+const fruits = ['apple', 'banana', 'orange', 'grape'];
+
+// Add 'mango' to the end
+fruits.push('mango');
+console.log(fruits); // ['apple', 'banana', 'orange', 'grape', 'mango']
+
+// Add 'strawberry' to the beginning
+fruits.unshift('strawberry');
+console.log(fruits); // ['strawberry', 'apple', 'banana', 'orange', 'grape', 'mango']
+
+// Remove the last item
+fruits.pop();
+console.log(fruits); // ['strawberry', 'apple', 'banana', 'orange', 'grape']
+
+// Remove the first item
+fruits.shift();
+console.log(fruits); // ['apple', 'banana', 'orange', 'grape']
+
+// Find the index of 'orange'
+const orangeIndex = fruits.indexOf('orange');
+console.log(orangeIndex); // 2
+```
+
+### 2. Array Iteration - forEach
+```javascript
+const numbers = [1, 2, 3, 4, 5];
+
+// Print each number multiplied by 2
+numbers.forEach(num => console.log(num * 2)); // 2, 4, 6, 8, 10
+
+// Print each number with its index
+numbers.forEach((num, index) => console.log(`Index ${index}: ${num}`));
+
+// Calculate sum using forEach
+let sum = 0;
+numbers.forEach(num => sum += num);
+console.log(sum); // 15
+```
+
+### 3. Array Transformation - map
+```javascript
+const prices = [10, 25, 30, 15];
+
+// Increase by 10%
+const increasedPrices = prices.map(price => price * 1.1);
+console.log(increasedPrices); // [11, 27.5, 33, 16.5]
+
+// Add currency
+const pricesWithCurrency = prices.map(price => `$${price}`);
+console.log(pricesWithCurrency); // ['$10', '$25', '$30', '$15']
+
+// Celsius to Fahrenheit
+const celsius = [0, 20, 30, 40];
+const fahrenheit = celsius.map(c => (c * 9/5) + 32);
+console.log(fahrenheit); // [32, 68, 86, 104]
+```
+
+### 4. Array Filtering - filter
+```javascript
+const ages = [12, 18, 25, 16, 30, 14, 22];
+
+// Filter adults
+const adults = ages.filter(age => age >= 18);
+console.log(adults); // [18, 25, 30, 22]
+
+// Filter teenagers
+const teenagers = ages.filter(age => age >= 13 && age <= 19);
+console.log(teenagers); // [18, 16, 14]
+
+// Filter even ages
+const evenAges = ages.filter(age => age % 2 === 0);
+console.log(evenAges); // [12, 18, 16, 30, 14, 22]
+```
+
+### 5. Array Searching - find & findIndex
+```javascript
+const students = [
+  {name: 'Ahmed', grade: 85},
+  {name: 'Sara', grade: 92},
+  {name: 'Omar', grade: 78}
+];
+
+// Find student with grade > 90
+const topStudent = students.find(student => student.grade > 90);
+console.log(topStudent); // {name: 'Sara', grade: 92}
+
+// Find index of Omar
+const omarIndex = students.findIndex(student => student.name === 'Omar');
+console.log(omarIndex); // 2
+
+// Check if any student has grade < 80
+const hasLowGrade = students.some(student => student.grade < 80);
+console.log(hasLowGrade); // true
+```
+
+## Mid Level Solutions
+
+### 6. Array Reduction - reduce
+```javascript
+const transactions = [100, -50, 200, -30, 150];
+const products = [
+  {name: 'laptop', price: 1000, quantity: 2},
+  {name: 'phone', price: 500, quantity: 3},
+  {name: 'tablet', price: 300, quantity: 1}
+];
+
+// Calculate final balance
+const balance = transactions.reduce((acc, transaction) => acc + transaction, 0);
+console.log(balance); // 370
+
+// Calculate total value
+const totalValue = products.reduce((acc, product) => acc + (product.price * product.quantity), 0);
+console.log(totalValue); // 3800
+
+// Find highest value product
+const highestValueProduct = products.reduce((max, product) => {
+  const currentValue = product.price * product.quantity;
+  const maxValue = max.price * max.quantity;
+  return currentValue > maxValue ? product : max;
+});
+console.log(highestValueProduct); // {name: 'laptop', price: 1000, quantity: 2}
+
+// Group by price range
+const priceRanges = products.reduce((acc, product) => {
+  let range;
+  if (product.price < 500) range = 'low';
+  else if (product.price < 1000) range = 'medium';
+  else range = 'high';
+  
+  if (!acc[range]) acc[range] = [];
+  acc[range].push(product);
+  return acc;
+}, {});
+console.log(priceRanges);
+```
+
+### 7. Complex Filtering and Mapping
+```javascript
+const employees = [
+  {name: 'Ali', department: 'IT', salary: 50000, experience: 3},
+  {name: 'Nour', department: 'HR', salary: 45000, experience: 5},
+  {name: 'Hassan', department: 'IT', salary: 60000, experience: 7},
+  {name: 'Layla', department: 'Finance', salary: 55000, experience: 4}
+];
+
+// IT employees with salary > 55000
+const highPaidIT = employees
+  .filter(emp => emp.department === 'IT' && emp.salary > 55000)
+  .map(emp => emp.name);
+console.log(highPaidIT); // ['Hassan']
+
+// Average salary by department
+const avgSalaryByDept = employees.reduce((acc, emp) => {
+  if (!acc[emp.department]) {
+    acc[emp.department] = { total: 0, count: 0 };
+  }
+  acc[emp.department].total += emp.salary;
+  acc[emp.department].count += 1;
+  return acc;
+}, {});
+
+Object.keys(avgSalaryByDept).forEach(dept => {
+  const avg = avgSalaryByDept[dept].total / avgSalaryByDept[dept].count;
+  console.log(`${dept}: ${avg}`);
+});
+
+// Promotion eligible
+const promotionEligible = employees.filter(emp => emp.experience >= 5);
+console.log(promotionEligible); // Nour and Hassan
+
+// Salary report
+const salaryReport = employees.map(emp => ({
+  name: emp.name,
+  department: emp.department,
+  salaryGrade: emp.salary < 50000 ? 'Junior' : emp.salary <= 60000 ? 'Mid' : 'Senior'
+}));
+console.log(salaryReport);
+```
+
+### 8. Array Flattening and Sorting
+```javascript
+const nestedData = [
+  [1, 2, 3],
+  [4, 5, 6],
+  [7, [8, 9], 10]
+];
+const mixedArray = [3, 1, 4, 1, 5, 9, 2, 6];
+
+// Flatten completely
+const flattened = nestedData.flat(Infinity);
+console.log(flattened); // [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+// Sort ascending
+const sorted = [...mixedArray].sort((a, b) => a - b);
+console.log(sorted); // [1, 1, 2, 3, 4, 5, 6, 9]
+
+// Sort employees by salary descending
+const sortedBySalary = [...employees].sort((a, b) => b.salary - a.salary);
+
+// Sort by department then experience
+const sortedComplex = [...employees].sort((a, b) => {
+  if (a.department !== b.department) {
+    return a.department.localeCompare(b.department);
+  }
+  return b.experience - a.experience;
+});
+```
+
+### 9. Array Validation - every & some
+```javascript
+const scores = [85, 90, 78, 92, 88];
+const userInputs = ['', 'hello', 'world', ''];
+const products2 = [
+  {name: 'A', price: 100, inStock: true},
+  {name: 'B', price: 0, inStock: false},
+  {name: 'C', price: 50, inStock: true}
+];
+
+// All scores passing
+const allPassing = scores.every(score => score >= 70);
+console.log(allPassing); // true
+
+// Some inputs empty
+const hasEmptyInputs = userInputs.some(input => input === '');
+console.log(hasEmptyInputs); // true
+
+// All products valid
+const allProductsValid = products2.every(product => product.price > 0 && product.inStock);
+console.log(allProductsValid); // false
+
+// Any needs restocking
+const needsRestocking = products2.some(product => !product.inStock);
+console.log(needsRestocking); // true
+```
+
+## Senior Level Solutions
+
+### 10. Advanced Data Processing Pipeline
+```javascript
+const salesData = [
+  {id: 1, product: 'laptop', category: 'electronics', price: 1000, quantity: 2, date: '2024-01-15', region: 'North'},
+  {id: 2, product: 'shirt', category: 'clothing', price: 50, quantity: 5, date: '2024-01-16', region: 'South'},
+  {id: 3, product: 'phone', category: 'electronics', price: 800, quantity: 1, date: '2024-01-17', region: 'North'},
+  {id: 4, product: 'jeans', category: 'clothing', price: 80, quantity: 3, date: '2024-01-18', region: 'East'},
+  {id: 5, product: 'tablet', category: 'electronics', price: 400, quantity: 2, date: '2024-01-19', region: 'South'}
+];
+
+// Comprehensive sales report
+const salesReport = {
+  // Total revenue by category
+  revenueByCategory: salesData.reduce((acc, sale) => {
+    const revenue = sale.price * sale.quantity;
+    acc[sale.category] = (acc[sale.category] || 0) + revenue;
+    return acc;
+  }, {}),
+  
+  // Average order value by region
+  avgOrderByRegion: salesData.reduce((acc, sale) => {
+    const orderValue = sale.price * sale.quantity;
+    if (!acc[sale.region]) {
+      acc[sale.region] = { total: 0, count: 0 };
+    }
+    acc[sale.region].total += orderValue;
+    acc[sale.region].count += 1;
+    return acc;
+  }, {}),
+  
+  // Top selling product
+  topSellingProduct: salesData.reduce((max, sale) => 
+    sale.quantity > max.quantity ? sale : max
+  ),
+  
+  // Revenue by date
+  revenueByDate: salesData.reduce((acc, sale) => {
+    const revenue = sale.price * sale.quantity;
+    acc[sale.date] = (acc[sale.date] || 0) + revenue;
+    return acc;
+  }, {})
+};
+
+// Convert avg calculations to actual averages
+Object.keys(salesReport.avgOrderByRegion).forEach(region => {
+  const data = salesReport.avgOrderByRegion[region];
+  salesReport.avgOrderByRegion[region] = data.total / data.count;
+});
+
+console.log(salesReport);
+
+// Flexible filtering system
+const createFilter = (criteria) => {
+  return (item) => {
+    return Object.keys(criteria).every(key => {
+      const criterion = criteria[key];
+      if (typeof criterion === 'function') {
+        return criterion(item[key]);
+      }
+      return item[key] === criterion;
+    });
+  };
+};
+
+// Usage example
+const expensiveElectronics = salesData.filter(createFilter({
+  category: 'electronics',
+  price: (price) => price > 500
+}));
+
+// Data transformation pipeline
+const transformPipeline = (...transforms) => (data) => 
+  transforms.reduce((result, transform) => transform(result), data);
+
+const addRevenue = (data) => data.map(item => ({
+  ...item,
+  revenue: item.price * item.quantity
+}));
+
+const addProfitMargin = (data) => data.map(item => ({
+  ...item,
+  profitMargin: item.category === 'electronics' ? 0.3 : 0.5
+}));
+
+const pipeline = transformPipeline(addRevenue, addProfitMargin);
+const transformedData = pipeline(salesData);
+console.log(transformedData);
+```
+
+### 11. Performance Optimization Challenge
+```javascript
+const largeDataset = Array.from({length: 100000}, (_, i) => ({
+  id: i,
+  value: Math.random() * 1000,
+  category: ['A', 'B', 'C'][i % 3],
+  active: Math.random() > 0.3
+}));
+
+// Optimized top 10 in category A
+console.time('Top 10 Category A');
+const top10CategoryA = largeDataset
+  .filter(item => item.category === 'A')
+  .sort((a, b) => b.value - a.value)
+  .slice(0, 10);
+console.timeEnd('Top 10 Category A');
+
+// More efficient approach using reduce
+console.time('Top 10 Optimized');
+const top10Optimized = largeDataset.reduce((acc, item) => {
+  if (item.category !== 'A') return acc;
+  
+  if (acc.length < 10) {
+    acc.push(item);
+    acc.sort((a, b) => b.value - a.value);
+  } else if (item.value > acc[9].value) {
+    acc[9] = item;
+    acc.sort((a, b) => b.value - a.value);
+  }
+  return acc;
+}, []);
+console.timeEnd('Top 10 Optimized');
+
+// Statistics calculation
+const calculateStats = (items) => {
+  const values = items.map(item => item.value);
+  const sum = values.reduce((acc, val) => acc + val, 0);
+  const avg = sum / values.length;
+  const min = Math.min(...values);
+  const max = Math.max(...values);
+  
+  const variance = values.reduce((acc, val) => acc + Math.pow(val - avg, 2), 0) / values.length;
+  const stdDev = Math.sqrt(variance);
+  
+  return { min, max, avg, stdDev, count: values.length };
+};
+
+const activeItems = largeDataset.filter(item => item.active);
+const stats = calculateStats(activeItems);
+console.log(stats);
+
+// Group by category with aggregates
+const groupedStats = largeDataset.reduce((acc, item) => {
+  if (!acc[item.category]) {
+    acc[item.category] = [];
+  }
+  acc[item.category].push(item);
+  return acc;
+}, {});
+
+const categoryStats = Object.keys(groupedStats).reduce((acc, category) => {
+  acc[category] = calculateStats(groupedStats[category]);
+  return acc;
+}, {});
+
+console.log(categoryStats);
+```
+
+### 12. Functional Programming Patterns
+```javascript
+const orders = [
+  {id: 1, customerId: 'C1', items: [{name: 'item1', price: 100, qty: 2}], status: 'pending'},
+  {id: 2, customerId: 'C2', items: [{name: 'item2', price: 50, qty: 1}, {name: 'item3', price: 75, qty: 2}], status: 'completed'},
+  {id: 3, customerId: 'C1', items: [{name: 'item1', price: 100, qty: 1}], status: 'cancelled'}
+];
+
+// Pure functions
+const calculateOrderTotal = (order) => 
+  order.items.reduce((total, item) => total + (item.price * item.qty), 0);
+
+const calculateCustomerLifetimeValue = (customerId, orders) =>
+  orders
+    .filter(order => order.customerId === customerId && order.status === 'completed')
+    .reduce((total, order) => total + calculateOrderTotal(order), 0);
+
+const getOrderStatusSummary = (orders) =>
+  orders.reduce((acc, order) => {
+    acc[order.status] = (acc[order.status] || 0) + 1;
+    return acc;
+  }, {});
+
+// Usage
+orders.forEach(order => {
+  console.log(`Order ${order.id} total: $${calculateOrderTotal(order)}`);
+});
+
+const customerLTV = calculateCustomerLifetimeValue('C1', orders);
+console.log(`Customer C1 LTV: $${customerLTV}`);
+
+const statusSummary = getOrderStatusSummary(orders);
+console.log('Order status summary:', statusSummary);
+
+// Composable pipeline
+const pipe = (...fns) => (value) => fns.reduce((acc, fn) => fn(acc), value);
+
+const processOrders = pipe(
+  orders => orders.filter(order => order.status === 'completed'),
+  orders => orders.map(order => ({ ...order, total: calculateOrderTotal(order) })),
+  orders => orders.sort((a, b) => b.total - a.total)
+);
+
+const processedOrders = processOrders(orders);
+console.log(processedOrders);
+
+// Memoization
+const memoize = (fn) => {
+  const cache = new Map();
+  return (...args) => {
+    const key = JSON.stringify(args);
+    if (cache.has(key)) {
+      return cache.get(key);
+    }
+    const result = fn(...args);
+    cache.set(key, result);
+    return result;
+  };
+};
+
+const memoizedCustomerLTV = memoize(calculateCustomerLifetimeValue);
+```
+
+### 13. Advanced Array Manipulation
+```javascript
+const matrix = [
+  [1, 2, 3],
+  [4, 5, 6],
+  [7, 8, 9]
+];
+const irregularArray = [1, [2, 3], [4, [5, 6]], 7, [8, [9, [10]]]];
+
+// Transpose matrix
+const transpose = (matrix) =>
+  matrix[0].map((_, colIndex) => matrix.map(row => row[colIndex]));
+
+const transposed = transpose(matrix);
+console.log(transposed); // [[1,4,7], [2,5,8], [3,6,9]]
+
+// Deep flatten
+const deepFlatten = (arr) =>
+  arr.reduce((acc, val) => 
+    Array.isArray(val) ? acc.concat(deepFlatten(val)) : acc.concat(val), []);
+
+const flattened = deepFlatten(irregularArray);
+console.log(flattened); // [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+// Rotate matrix 90 degrees clockwise
+const rotateMatrix90 = (matrix) => {
+  const n = matrix.length;
+  return Array.from({ length: n }, (_, i) =>
+    Array.from({ length: n }, (_, j) => matrix[n - 1 - j][i])
+  );
+};
+
+const rotated = rotateMatrix90(matrix);
+console.log(rotated); // [[7,4,1], [8,5,2], [9,6,3]]
+
+// Array chunking
+const chunk = (array, size) =>
+  Array.from({ length: Math.ceil(array.length / size) }, (_, i) =>
+    array.slice(i * size, i * size + size)
+  );
+
+const chunked = chunk([1, 2, 3, 4, 5, 6, 7, 8, 9], 3);
+console.log(chunked); // [[1,2,3], [4,5,6], [7,8,9]]
+```
+
+### 14. Real-world E-commerce Analytics
+```javascript
+const customerData = [
+  {
+    id: 'C1',
+    orders: [
+      {date: '2024-01-01', items: [{category: 'electronics', price: 1000}, {category: 'books', price: 20}]},
+      {date: '2024-02-01', items: [{category: 'electronics', price: 500}]}
+    ]
+  },
+  {
+    id: 'C2',
+    orders: [
+      {date: '2024-01-15', items: [{category: 'clothing', price: 80}, {category: 'books', price: 15}]},
+      {date: '2024-03-01', items: [{category: 'electronics', price: 200}]}
+    ]
+  }
+];
+
+// Customer segmentation
+const segmentCustomers = (customers) => {
+  return customers.map(customer => {
+    const totalSpent = customer.orders.reduce((total, order) =>
+      total + order.items.reduce((orderTotal, item) => orderTotal + item.price, 0), 0
+    );
+    
+    const avgOrderValue = totalSpent / customer.orders.length;
+    const orderCount = customer.orders.length;
+    
+    let segment;
+    if (totalSpent > 1000 && orderCount > 1) segment = 'VIP';
+    else if (totalSpent > 500) segment = 'Premium';
+    else segment = 'Regular';
+    
+    return {
+      customerId: customer.id,
+      totalSpent,
+      avgOrderValue,
+      orderCount,
+      segment
+    };
+  });
+};
+
+const segments = segmentCustomers(customerData);
+console.log(segments);
+
+// Recommendation engine
+const generateRecommendations = (customers) => {
+  // Get all categories and their popularity
+  const categoryPopularity = customers.reduce((acc, customer) => {
+    customer.orders.forEach(order => {
+      order.items.forEach(item => {
+        acc[item.category] = (acc[item.category] || 0) + 1;
+      });
+    });
+    return acc;
+  }, {});
+  
+  return customers.map(customer => {
+    // Get customer's purchase history
+    const purchasedCategories = new Set();
+    customer.orders.forEach(order => {
+      order.items.forEach(item => {
+        purchasedCategories.add(item.category);
+      });
+    });
+    
+    // Recommend popular categories not yet purchased
+    const recommendations = Object.keys(categoryPopularity)
+      .filter(category => !purchasedCategories.has(category))
+      .sort((a, b) => categoryPopularity[b] - categoryPopularity[a])
+      .slice(0, 3);
+    
+    return {
+      customerId: customer.id,
+      recommendations
+    };
+  });
+};
+
+const recommendations = generateRecommendations(customerData);
+console.log(recommendations);
+
+// Churn prediction
+const predictChurn = (customers) => {
+  const currentDate = new Date('2024-03-15');
+  
+  return customers.map(customer => {
+    const lastOrderDate = new Date(Math.max(
+      ...customer.orders.map(order => new Date(order.date).getTime())
+    ));
+    
+    const daysSinceLastOrder = Math.floor((currentDate - lastOrderDate) / (1000 * 60 * 60 * 24));
+    const orderFrequency = customer.orders.length;
+    
+    const churnRisk = daysSinceLastOrder > 60 && orderFrequency < 3 ? 'High' : 
+                     daysSinceLastOrder > 30 ? 'Medium' : 'Low';
+    
+    return {
+      customerId: customer.id,
+      daysSinceLastOrder,
+      orderFrequency,
+      churnRisk
+    };
+  });
+};
+
+const churnPredictions = predictChurn(customerData);
+console.log(churnPredictions);
+
+// Revenue forecasting
+const forecastRevenue = (customers) => {
+  const monthlyRevenue = customers.reduce((acc, customer) => {
+    customer.orders.forEach(order => {
+      const month = order.date.substring(0, 7); // YYYY-MM
+      const revenue = order.items.reduce((sum, item) => sum + item.price, 0);
+      acc[month] = (acc[month] || 0) + revenue;
+    });
+    return acc;
+  }, {});
+  
+  const revenues = Object.values(monthlyRevenue);
+  const avgMonthlyRevenue = revenues.reduce((sum, rev) => sum + rev, 0) / revenues.length;
+  const growthRate = revenues.length > 1 ? 
+    (revenues[revenues.length - 1] - revenues[0]) / revenues[0] : 0;
+  
+  // Simple linear projection for next 3 months
+  const forecast = Array.from({length: 3}, (_, i) => 
+    avgMonthlyRevenue * (1 + growthRate) * (i + 1)
+  );
+  
+  return {
+    historical: monthlyRevenue,
+    avgMonthlyRevenue,
+    growthRate,
+    forecast
+  };
+};
+
+const revenueForecast = forecastRevenue(customerData);
+console.log(revenueForecast);
+```
+
+### 15. Algorithm Implementation with Arrays
+```javascript
+const unsortedArray = [64, 34, 25, 12, 22, 11, 90];
+const searchArray = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19];
+
+// Bubble sort using array methods
+const bubbleSort = (arr) => {
+  const result = [...arr];
+  const n = result.length;
+  
+  Array.from({length: n}, (_, i) => {
+    Array.from({length: n - i - 1}, (_, j) => {
+      if (result[j] > result[j + 1]) {
+        [result[j], result[j + 1]] = [result[j + 1], result[j]];
+      }
+    });
+  });
+  
+  return result;
+};
+
+const sorted = bubbleSort(unsortedArray);
+console.log('Bubble sorted:', sorted); // [11, 12, 22, 25, 34, 64, 90]
+
+// Binary search using array methods
+const binarySearch = (arr, target) => {
+  let left = 0;
+  let right = arr.length - 1;
+  
+  while (left <= right) {
+    const mid = Math.floor((left + right) / 2);
+    
+    if (arr[mid] === target) return mid;
+    if (arr[mid] < target) left = mid + 1;
+    else right = mid - 1;
+  }
+  
+  return -1;
+};
+
+const searchResult = binarySearch(searchArray, 11);
+console.log('Binary search result:', searchResult); // 5
+
+// Longest increasing subsequence
+const longestIncreasingSubsequence = (arr) => {
+  if (arr.length === 0) return [];
+  
+  const dp = Array.from({length: arr.length}, () => 1);
+  const prev = Array.from({length: arr.length}, () => -1);
+  
+  let maxLength = 1;
+  let maxIndex = 0;
+  
+  arr.forEach((_, i) => {
+    arr.slice(0, i).forEach((_, j) => {
+      if (arr[j] < arr[i] && dp[j] + 1 > dp[i]) {
+        dp[i] = dp[j] + 1;
+        prev[i] = j;
+        
+        if (dp[i] > maxLength) {
+          maxLength = dp[i];
+          maxIndex = i;
+        }
+      }
+    });
+  });
+  
+  // Reconstruct sequence
+  const result = [];
+  let current = maxIndex;
+  while (current !== -1) {
+    result.unshift(arr[current]);
+    current = prev[current];
+  }
+  
+  return result;
+};
+
+const lis = longestIncreasingSubsequence([10, 9, 2, 5, 3, 7, 101, 18]);
+console.log('Longest increasing subsequence:', lis); // [2, 3, 7, 18]
+
+// Array-based LRU Cache
+class LRUCache {
+  constructor(capacity) {
+    this.capacity = capacity;
+    this.cache = [];
+  }
+  
+  get(key) {
+    const index = this.cache.findIndex(item => item.key === key);
+    if (index === -1) return null;
+    
+    // Move to front (most recently used)
+    const item = this.cache.splice(index, 1)[0];
+    this.cache.unshift(item);
+    return item.value;
+  }
+  
+  put(key, value) {
+    const existingIndex = this.cache.findIndex(item => item.key === key);
+    
+    if (existingIndex !== -1) {
+      // Update existing item and move to front
+      this.cache.splice(existingIndex, 1);
+    } else if (this.cache.length >= this.capacity) {
+      // Remove least recently used (last item)
+      this.cache.pop();
+    }
+    
+    // Add new item to front
+    this.cache.unshift({ key, value });
+  }
+  
+  display() {
+    return this.cache.map(item => `${item.key}:${item.value}`);
+  }
+}
+
+// Usage example
+const lru = new LRUCache(3);
+lru.put('a', 1);
+lru.put('b', 2);
+lru.put('c', 3);
+console.log('LRU Cache:', lru.display()); // ['c:3', 'b:2', 'a:1']
+
+lru.get('a'); // Access 'a'
+console.log('After accessing a:', lru.display()); // ['a:1', 'c:3', 'b:2']
+
+lru.put('d', 4); // This should remove 'b'
+console.log('After adding d:', lru.display()); // ['d:4', 'a:1', 'c:3']
+```
+
+## Bonus Advanced Exercises
+
+### 16. Custom Array Methods Implementation
+```javascript
+// Implement custom array methods
+Array.prototype.customMap = function(callback) {
+  const result = [];
+  for (let i = 0; i < this.length; i++) {
+    result[i] = callback(this[i], i, this);
+  }
+  return result;
+};
+
+Array.prototype.customFilter = function(callback) {
+  const result = [];
+  for (let i = 0; i < this.length; i++) {
+    if (callback(this[i], i, this)) {
+      result.push(this[i]);
+    }
+  }
+  return result;
+};
+
+Array.prototype.customReduce = function(callback, initialValue) {
+  let accumulator = initialValue;
+  let startIndex = 0;
+  
+  if (initialValue === undefined) {
+    accumulator = this[0];
+    startIndex = 1;
+  }
+  
+  for (let i = startIndex; i < this.length; i++) {
+    accumulator = callback(accumulator, this[i], i, this);
+  }
+  
+  return accumulator;
+};
+
+// Test custom implementations
+const testArray = [1, 2, 3, 4, 5];
+console.log('Custom map:', testArray.customMap(x => x * 2)); // [2, 4, 6, 8, 10]
+console.log('Custom filter:', testArray.customFilter(x => x > 3)); // [4, 5]
+console.log('Custom reduce:', testArray.customReduce((acc, x) => acc + x, 0)); // 15
+```
+
+### 17. Memory-Efficient Large Dataset Processing
+```javascript
+// Processing large datasets efficiently
+function* chunkProcessor(array, chunkSize) {
+  for (let i = 0; i < array.length; i += chunkSize) {
+    yield array.slice(i, i + chunkSize);
+  }
+}
+
+function processLargeDataset(data, processor, chunkSize = 1000) {
+  const results = [];
+  
+  for (const chunk of chunkProcessor(data, chunkSize)) {
+    const chunkResult = processor(chunk);
+    results.push(...chunkResult);
+  }
+  
+  return results;
+}
+
+// Example usage with large dataset
+const largeDataset2 = Array.from({length: 50000}, (_, i) => ({
+  id: i,
+  value: Math.random() * 100,
+  category: Math.floor(Math.random() * 5)
+}));
+
+const expensiveProcessor = (chunk) => 
+  chunk
+    .filter(item => item.value > 50)
+    .map(item => ({ ...item, processed: true }));
+
+console.time('Large dataset processing');
+const processedResults = processLargeDataset(largeDataset2, expensiveProcessor);
+console.timeEnd('Large dataset processing');
+console.log(`Processed ${processedResults.length} items`);
+```
+
+### 18. Reactive Array Operations
+```javascript
+// Create reactive arrays that notify on changes
+class ReactiveArray extends Array {
+  constructor(...items) {
+    super(...items);
+    this.observers = [];
+  }
+  
+  addObserver(callback) {
+    this.observers.push(callback);
+  }
+  
+  notify(operation, ...args) {
+    this.observers.forEach(observer => observer(operation, args, this));
+  }
+  
+  push(...items) {
+    const result = super.push(...items);
+    this.notify('push', items);
+    return result;
+  }
+  
+  pop() {
+    const result = super.pop();
+    this.notify('pop', result);
+    return result;
+  }
+  
+  reactiveMap(callback) {
+    const result = new ReactiveArray();
+    
+    // Initial mapping
+    this.forEach((item, index) => {
+      result.push(callback(item, index));
+    });
+    
+    // Watch for changes
+    this.addObserver((operation, args) => {
+      if (operation === 'push') {
+        args[0].forEach((item, index) => {
+          result.push(callback(item, this.length - args[0].length + index));
+        });
+      }
+      // Add more operations as needed
+    });
+    
+    return result;
+  }
+}
+
+// Usage example
+const reactiveArray = new ReactiveArray(1, 2, 3);
+reactiveArray.addObserver((operation, args, array) => {
+  console.log(`Operation: ${operation}, Args:`, args, 'Array:', [...array]);
+});
+
+const mappedArray = reactiveArray.reactiveMap(x => x * 2);
+console.log('Initial mapped:', [...mappedArray]); // [2, 4, 6]
+
+reactiveArray.push(4, 5); // Will trigger observer and update mapped array
+console.log('Updated mapped:', [...mappedArray]); // [2, 4, 6, 8, 10]
+```
+
+## Performance Comparison Examples
+
+### 19. Benchmark Different Approaches
+```javascript
+// Compare different array operation approaches
+const generateTestData = (size) => 
+  Array.from({length: size}, (_, i) => ({
+    id: i,
+    value: Math.random() * 1000,
+    category: i % 10
+  }));
+
+const testData = generateTestData(100000);
+
+// Approach 1: Chain multiple array methods
+console.time('Chained approach');
+const result1 = testData
+  .filter(item => item.value > 500)
+  .map(item => ({ ...item, doubled: item.value * 2 }))
+  .reduce((acc, item) => {
+    acc[item.category] = (acc[item.category] || []).concat(item);
+    return acc;
+  }, {});
+console.timeEnd('Chained approach');
+
+// Approach 2: Single pass with reduce
+console.time('Single pass approach');
+const result2 = testData.reduce((acc, item) => {
+  if (item.value > 500) {
+    const processedItem = { ...item, doubled: item.value * 2 };
+    acc[item.category] = (acc[item.category] || []).concat(processedItem);
+  }
+  return acc;
+}, {});
+console.timeEnd('Single pass approach');
+
+// Approach 3: For loop
+console.time('For loop approach');
+const result3 = {};
+for (let i = 0; i < testData.length; i++) {
+  const item = testData[i];
+  if (item.value > 500) {
+    const processedItem = { ...item, doubled: item.value * 2 };
+    if (!result3[item.category]) result3[item.category] = [];
+    result3[item.category].push(processedItem);
+  }
+}
+console.timeEnd('For loop approach');
+
+console.log('Results equal:', 
+  JSON.stringify(result1) === JSON.stringify(result2) && 
+  JSON.stringify(result2) === JSON.stringify(result3)
+);
+```
+
+### 20. Advanced Pattern Matching
+```javascript
+// Pattern matching with arrays
+const matchPattern = (data, patterns) => {
+  return patterns.find(pattern => {
+    return Object.keys(pattern.condition).every(key => {
+      const condition = pattern.condition[key];
+      if (typeof condition === 'function') {
+        return condition(data[key]);
+      }
+      return data[key] === condition;
+    });
+  })?.action(data) || null;
+};
+
+const userData = [
+  { age: 25, premium: true, purchases: 15 },
+  { age: 17, premium: false, purchases: 2 },
+  { age: 35, premium: true, purchases: 50 },
+  { age: 45, premium: false, purchases: 8 }
+];
+
+const patterns = [
+  {
+    condition: { 
+      age: age => age >= 18, 
+      premium: true, 
+      purchases: p => p >= 20 
+    },
+    action: user => ({ ...user, tier: 'VIP' })
+  },
+  {
+    condition: { 
+      age: age => age >= 18, 
+      premium: true 
+    },
+    action: user => ({ ...user, tier: 'Premium' })
+  },
+  {
+    condition: { 
+      age: age => age >= 18 
+    },
+    action: user => ({ ...user, tier: 'Regular' })
+  },
+  {
+    condition: {},
+    action: user => ({ ...user, tier: 'Minor' })
+  }
+];
+
+const categorizedUsers = userData.map(user => matchPattern(user, patterns));
+console.log('Categorized users:', categorizedUsers);
+```
+
+This comprehensive exercise set covers all major JavaScript array methods across different skill levels. Each exercise builds upon previous concepts and introduces new challenges. The solutions demonstrate best practices, performance considerations, and real-world applications.
+
+**Key Learning Outcomes:**
+- Master all core array methods (push, pop, map, filter, reduce, etc.)
+- Understand functional programming patterns
+- Learn performance optimization techniques
+- Practice real-world data processing scenarios
+- Implement custom array functionality
+- Handle large datasets efficiently
+- Apply advanced algorithmic concepts
+
+Practice these exercises progressively, starting with junior level and moving up. Focus on understanding the underlying concepts rather than just memorizing syntax!
